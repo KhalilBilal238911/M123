@@ -69,7 +69,7 @@ async def help(client, m: Message):
 async def repo(client, m: Message):
     await m.delete()
     REPO = f"""
-<b>👋  اهلا {m.from_user.mention}!
+<b>👋 هلا حبيبي اسوة راسك ؟. تفضل أمر خدمة ؟ {m.from_user.mention}!
 - للمطور : @Ti_iT01
  @XX_SG
 """
