@@ -163,7 +163,7 @@ def time_to_seconds(time):
 async def vsong(client, message: Message):
     urlissed = get_text(message)
 
-    pablo = await client.send_message(message.chat.id, f"**🔎 يبحث عن : @TelethonQuran** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"**🔎 يبحث عن : @XX_SG** `{urlissed}`")
     if not urlissed:
         await pablo.edit(            "صيغة الأمر غير صالحة!"        )
         return
@@ -184,14 +184,14 @@ async def vsong(client, message: Message):
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url, download=True)
     except Exception as e:
-        await event.edit(event, f"**التحميل فشل : @TelethonQuran** \n `{str(e)}`")
+        await event.edit(event, f"**التحميل فشل : @XX_SG** \n `{str(e)}`")
         return
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
     capy = f"""
 **🏷️ اسم الفيديو :** [{thum}]({mo})
 **🔉 طلب من :** {message.from_user.mention}
-- @TelethonQuran"""
+- @XX_SG"""
     await client.send_video(        message.chat.id,        video=open(file_stark, "rb"),        duration=int(ytdl_data["duration"]),        file_name=str(ytdl_data["title"]),        thumb=sedlyf,        caption=capy,        supports_streaming=True,        progress=progress,        progress_args=(            pablo,            c_time,            f"**📥 تحميل** `{urlissed}`",            file_stark,        ),    )
     await pablo.delete()
     for files in (sedlyf, file_stark):
